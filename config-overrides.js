@@ -1,9 +1,13 @@
-const { override, fixBabelImports , addDecoratorsLegacy} = require('customize-cra');
+const { override, fixBabelImports, addDecoratorsLegacy, addLessLoader } = require('customize-cra');
 module.exports = override(
     fixBabelImports('import', {
         libraryName: 'antd',
         libraryDirectory: 'es',
-        style: 'css',
+        style: true,
     }),
     addDecoratorsLegacy(),
+    addLessLoader({
+        javascriptEnabled: true,
+        modifyVars: { '@primary-color': '#1DA57A' },
+    }),
 );

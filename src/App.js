@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import {Button, Pagination } from 'antd';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function test(MyComponent){
+    return ()=>{
+        return <div>
+            <MyComponent></MyComponent>
+            <div>啊哈哈哈哈哈</div>
+        </div>
+    }
 }
 
-export default App;
+@test
+class App extends Component {
+    render() {
+        console.log(this.props)
+        return (
+            <div>
+                <Button type="primary">fsfsdfd</Button>
+
+                <Pagination
+                    showSizeChanger
+                    defaultCurrent={3}
+                    total={500}
+                />
+            </div>
+        )
+    }
+}
+
+export default App
