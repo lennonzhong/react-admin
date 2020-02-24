@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { adminRoute } from './routes'
 import { Route, Switch, Redirect } from 'react-router-dom';
+import {DashBoard} from './views';
 class App extends Component {
     render() {
         return (
@@ -12,7 +13,11 @@ class App extends Component {
                             exact={route.exact}
                             path={route.path}
                             render={(routerProps) => {
-                                return <route.component {...routerProps}></route.component>
+                                return (
+                                    <DashBoard>
+                                        <route.component {...routerProps}></route.component>
+                                    </DashBoard> 
+                                )
                             }}
                         />
                     })}
