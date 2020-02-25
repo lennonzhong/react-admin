@@ -25,15 +25,15 @@ export const adminRoute = [
         component: DashBoard,
         exact: false,
         isNav: true,
-        title: 'dashboard',
-        icon: 'user'
+        title: '仪表盘',
+        icon: 'dashboard'
     },
     {
-        path: '/admin/article/list',
+        path: '/admin/article',
         component: ArticleList,
         exact: true,
         isNav: false,
-        title: '文章列表',
+        title: '文章',
         icon: 'user',
         children: [
             {
@@ -41,15 +41,16 @@ export const adminRoute = [
                 component: ArticleEdit,
                 exact: false,
                 isNav: true,
+                hide: true,
                 title: '编辑',
                 icon: 'user'
             },
             {
-                path: '/admin/article/add',
+                path: '/admin/article/list',
                 component: ArticleEdit,
                 exact: false,
                 isNav: true,
-                title: '添加',
+                title: '列表',
                 icon: 'user'
             },
         ]
@@ -60,6 +61,6 @@ export const adminRoute = [
         exact: false,
         isNav: true,
         title: '设置',
-        icon: 'user'
+        icon: 'setting'
     },
 ]
