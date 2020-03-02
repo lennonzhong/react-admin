@@ -28,6 +28,11 @@ service.interceptors.response.use(response=>{
 })
 
 
-export const getArticleList = ()=>{
-   return  service.get('/api/v1/artileList')
+export const getArticleList = (page, size)=>{
+   return  service.get('/api/v1/artileList', {
+       params: {
+           page,
+           size
+       }
+   })
 }
